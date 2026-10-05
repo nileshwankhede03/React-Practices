@@ -1,0 +1,22 @@
+import { useState } from 'react';
+
+const App = () => {
+  console.log('Component re-render');
+  const [flag, setFlag] = useState(true);
+
+  console.log(flag);
+  return (
+    <div>
+      <h1>Count is : {flag}</h1>
+      <button
+        onClick={() => {
+          setFlag(false);
+        }}
+      >
+        Change Boolean
+      </button>
+    </div>
+  );
+};
+
+export default App;

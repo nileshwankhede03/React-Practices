@@ -1,0 +1,19 @@
+import { useState } from 'react';
+
+const Form = () => {
+  // brute force
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  return (
+    <div>
+      <div>
+        <h1>Form Data UI : </h1>
+        <p>Name : {name} </p>
+        <p>Email : {email}</p>
+      </div>
+    </div>
+  );
+};
+
+export default Form;
