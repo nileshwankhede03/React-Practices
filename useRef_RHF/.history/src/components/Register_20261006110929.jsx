@@ -1,0 +1,101 @@
+import { useRef, useState } from 'react';
+
+const Register = () => {
+  let formRef = useRef({});
+  const [user, setUser] = useState([]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formRef.current.username.value);
+    console.log(formRef.current.email.value);
+    console.log(formRef.current.password.value);
+
+    let obj = {
+      username: formRef.current.username.value,
+      email: formRef.current.email.value,
+      password: formRef.current.password.value,
+    };
+
+    setUser((prev) => [...prev, obj]);
+  };
+
+  console.log(user);
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 flex items-center justify-center px-4">
+      <div className="w-full max-w-md">
+        {/* Heading */}
+        <div className="mb-8 text-center">
+          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-600 text-2xl font-bold text-white shadow-lg shadow-indigo-600/30">
+            NW
+          </div>
+
+          <h1 className="text-3xl font-bold text-white">Create Account</h1>
+
+          <p className="mt-2 text-sm text-slate-400">
+            Create your account to get started
+          </p>
+        </div>
+
+        {/* Card */}
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Name */}
+            <div>
+              <label className="mb-2 block text-sm font-medium text-slate-200">
+                Name
+              </label>
+
+              <input
+                ref={(e) => {
+                  // console.log('ref -> ', e);
+                  formRef.current.username = e;
+                }}
+                type="text"
+                placeholder="Enter your name"
+                className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
+              />
+            </div>
+
+            {/* Email */}
+            <div>
+              <label className="mb-2 block text-sm font-medium text-slate-200">
+                Email
+              </label>
+
+              <input
+                ref={(e) => (formRef.current.email = e)}
+                type="email"
+                placeholder="Enter your email"
+                className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
+              />
+            </div>
+
+            {/* Password */}
+            <div>
+              <label className="mb-2 block text-sm font-medium text-slate-200">
+                Password
+              </label>
+
+              <input
+                ref={(e) => (formRef.current.password = e)}
+                type="password"
+                placeholder="Enter your password"
+                className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
+              />
+            </div>
+
+            {/* Register Button */}
+            <button
+              type="submit"
+              className="w-full rounded-xl bg-indigo-600 py-3 text-sm font-semibold text-white transition hover:bg-indigo-500 active:scale-[0.98]"
+            >
+              Create Account
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Register;
