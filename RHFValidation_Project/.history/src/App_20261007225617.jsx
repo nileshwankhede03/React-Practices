@@ -23,12 +23,7 @@ const App = () => {
     setEditUser(result);
   };
 
-  const handleDelete = (email) => {
-    console.log(email);
-    const result = user.filter((elem) => elem.email !== email);
-    console.log(result);
-    setUser(result);
-  };
+  const handleDelete = ()
 
   return (
     <div className="p-3 h-screen bg-gray-700 flex flex-col gap-4">
@@ -41,7 +36,6 @@ const App = () => {
               key={idx}
               user={elem}
               handleUpdate={handleUpdate}
-              handleDelete={handleDelete}
               setToggle={setToggle}
             />
           ))}
@@ -53,7 +47,7 @@ const App = () => {
             setUser={setUser}
             editIndex={editIndex}
             setEditIndex={setEditIndex}
-            setEditUser={setEditUser}
+            setEditUser = {setEditUser}
           />
         </div>
       )}

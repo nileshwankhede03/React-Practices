@@ -27,7 +27,7 @@ const App = () => {
     console.log(email);
     const result = user.filter((elem) => elem.email !== email);
     console.log(result);
-    setUser(result);
+    setUser((prev)=>[...prev,])
   };
 
   return (

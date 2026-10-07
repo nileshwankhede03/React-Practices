@@ -26,10 +26,7 @@ const UserCard = ({ user, setToggle, handleUpdate, handleDelete }) => {
         >
           Update
         </button>
-        <button
-          onClick={() => handleDelete(user.email)}
-          className="py-2 px-3 rounded bg-red-700 text-white"
-        >
+        <button onClick={()=>handleDelete()} className="py-2 px-3 rounded bg-red-700 text-white">
           Delete
         </button>
       </div>

@@ -25,9 +25,6 @@ const App = () => {
 
   const handleDelete = (email) => {
     console.log(email);
-    const result = user.filter((elem) => elem.email !== email);
-    console.log(result);
-    setUser(result);
   };
 
   return (
@@ -41,7 +38,6 @@ const App = () => {
               key={idx}
               user={elem}
               handleUpdate={handleUpdate}
-              handleDelete={handleDelete}
               setToggle={setToggle}
             />
           ))}
