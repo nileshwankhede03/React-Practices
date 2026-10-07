@@ -1,0 +1,31 @@
+import Navbar from './components/Navbar';
+import Form from './components/Form';
+import UserCard from './components/UserCard';
+import { useState } from 'react';
+
+const App = () => {
+  const [product, setProduct] = useState([]);
+
+  return (
+    <div className="min-h-screen bg-gray-100">
+      <Navbar />
+
+      <main className="max-w-7xl mx-auto px-6 py-10">
+        <div className="max-w-xl mx-auto mb-12">
+          <Form setProduct={setProduct} />
+        </div>
+
+
+
+          {product?.map((elem, idx) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <UserCard key={idx} product={elem} />
+            </div>
+        </section>
+          ))}
+      </main>
+    </div>
+  );
+};
+
+export default App;

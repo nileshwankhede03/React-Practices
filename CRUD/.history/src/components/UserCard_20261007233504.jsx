@@ -1,0 +1,37 @@
+const UserCard = ({ product }) => {
+  return (
+    <div className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200">
+      <img
+        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500"
+        alt="User"
+        className="w-full h-52 object-cover"
+      />
+
+      <div className="p-5">
+        <h2 className="text-xl font-semibold text-gray-800">John Doe</h2>
+
+        <p className="text-gray-500 mt-1">john@example.com</p>
+
+        <p className="text-lg font-bold text-green-600 mt-3">₹999</p>
+
+        <div className="flex gap-3 mt-5">
+          <button
+            className="flex-1 bg-blue-600 text-white py-2 rounded-lg
+            hover:bg-blue-700"
+          >
+            Edit
+          </button>
+
+          <button
+            className="flex-1 bg-red-500 text-white py-2 rounded-lg
+            hover:bg-red-600"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default UserCard;
