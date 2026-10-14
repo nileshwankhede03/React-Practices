@@ -1,0 +1,25 @@
+import { useState } from 'react';
+import axios from 'axios';
+import ProductCard from './components/ProductCard';
+import ProductCard from './components/Navbar';
+
+const App = () => {
+  const [product, setProduct] = useState([]);
+
+  const getProductData = async () => {
+    const { data } = await axios.get('https://fakestoreapi.com/products');
+    setProduct(data);
+  };
+
+  getProductData();
+
+  return (
+    <div className=" p-4 grid grid-cols-4 gap-3">
+      {product.map((elem) => (
+        <ProductCard key={elem.id} product={elem} />
+      ))}
+    </div>
+  );
+};
+
+export default App;
